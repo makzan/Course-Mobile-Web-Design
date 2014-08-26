@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Demo of Minimal mobile web</title>
+  <style>
+    /* normalize */
+    body, nav, ul, li, p, h1, h2, h3 {
+        padding: 0;
+        margin: 0;
+    }
+
+    /* core styles */
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    body > header,
+    body > footer {
+        background: #ffce25;
+    }
+
+    .row {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .row .row {
+      width: auto;
+      max-width: none;
+      margin: 0 -10px;
+    }
+
+    .col {
+      padding: 0 10px;
+      width: 100%;
+    }
+
+
+    /* Navigation */
+    nav li {
+      width: 100%;
+      padding: 5px;
+    }
+
+    nav li a {
+      background: #efefef;
+      display: block;
+      padding: 15px 0px;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 500px) {
+      nav li {
+        width: 33.33%;
+        float: left;
+      }
+
+      .row {
+        overflow: auto;
+      }
+      .col {
+        float:left;
+      }
+      .one {
+        width: 25%;
+      }
+      .two {
+        width: 50%;
+      }
+      .three {
+        width: 75%;
+      }
+      .four {
+      }
+    }
+
+    /* addition styles */
+    ul {
+        list-style: none;
+    }
+
+    h1, p {
+        margin-bottom: .5em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="row">
+    <div class="four col">
+      Website Title here
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="row">
+    <div class="four col">
+      <ul>
+        <li><a href='#'>Link 1</a></li>
+        <li><a href='#'>Link 2</a></li>
+        <li><a href='#'>Link 3</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="row">
+  <div class="three col">
+    <article>
+      <header>
+        <h1>Heading of the content</h1>
+      </header>
+
+      <p>An example content here for demonstration. This is some dummy text. Some dummy text inside a dummy paragraph pretending to be a real content.</p>
+      <p>Really? Are there real content here? What do you think? Here are just some dummy text.</p>
+
+      <p>Demo of 2 columns inside parent column.</p>
+      <div class="row">
+        <div class="two col">
+          <p>An example content here for demonstration. This is some dummy text. Some dummy text inside a dummy paragraph pretending to be a real content.</p>
+          <p>Really? Are there real content here? What do you think? Here are just some dummy text.</p>
+        </div>
+        <div class="two col">
+          <p>An example content here for demonstration. This is some dummy text. Some dummy text inside a dummy paragraph pretending to be a real content.</p>
+          <p>Really? Are there real content here? What do you think? Here are just some dummy text.</p>
+        </div>
+      </div>
+
+
+      <footer>
+        Author: Makzan
+      </footer>
+
+    </article>
+  </div>
+  <div class="one col">
+    <aside>
+      Any thing related but not part of the content goes here.
+    </aside>
+  </div>
+</div>
+
+<footer>
+  <div class="row">
+    <div class="four col">
+      Copyright goes here.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

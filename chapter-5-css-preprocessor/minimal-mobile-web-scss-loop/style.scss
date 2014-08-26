@@ -1,0 +1,99 @@
+$breakpoint: 500px;
+$major-color: steelblue;
+$columns-count: 12;
+
+$show-debug: true;
+@mixin debug ($color:red) {
+  @if $show-debug {
+    border: 1px solid $color;
+  }
+}
+
+/* normalize */
+body, nav, ul, li, p, h1, h2, h3 {
+    padding: 0;
+    margin: 0;
+}
+
+/* core styles */
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body > header,
+body > footer {
+    background: $major-color;
+}
+
+.row {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @media screen and (min-width: $breakpoint) {
+    overflow: auto;
+  }
+
+  .row {
+    width: auto;
+    max-width: none;
+    margin: 0 -10px;
+  }
+}
+
+
+.col {
+  padding: 0 10px;
+  width: 100%;
+
+  @include debug;
+
+  @media screen and (min-width: $breakpoint) {
+    float:left;
+  }
+}
+
+
+/* Navigation */
+nav li {
+  width: 100%;
+  padding: 5px;
+
+  @include debug(green);
+
+  @media screen and (min-width: $breakpoint) {
+    width: 33.33%;
+    float: left;
+  }
+
+  a {
+    background: #efefef;
+    display: block;
+    padding: 15px 0px;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: $breakpoint) {
+  @for $i from 1 through $columns-count {
+    .col-#{$i} {
+      width: 100%/$columns-count * $i;
+    }
+  }
+}
+
+/* addition styles */
+ul {
+    list-style: none;
+}
+
+h1, p {
+    margin-bottom: .5em;
+}
